@@ -209,7 +209,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .btn-arrow {
@@ -237,6 +239,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -257,7 +260,7 @@
 
 @media (max-width: 968px) {
   .contact-hero {
-    padding: 120px 1rem 40px;
+    padding: 100px 1rem 40px;
   }
 
   .contact-title {

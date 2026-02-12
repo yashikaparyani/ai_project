@@ -6,7 +6,7 @@ const Products = () => {
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'LLM', 'AI Model', 'AI Agent', 'NLP', 'ML Service', 'Computer Vision'];
+  const categories = ['All', 'AI Agent', 'Computer Vision', 'ML Service', 'AI Model', 'LLM'];
 
   useEffect(() => {
     const fetchProducts = async () => {
