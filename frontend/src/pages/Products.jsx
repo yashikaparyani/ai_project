@@ -196,13 +196,7 @@ const Products = () => {
                   {product.status}
                 </span>
               </div>
-              <div className="product-pricing">{product.pricing}</div>
             </div>
-
-            <button className="card-btn">
-              <span>Learn More</span>
-              <span className="btn-arrow">→</span>
-            </button>
           </div>
         ))}
       </div>
