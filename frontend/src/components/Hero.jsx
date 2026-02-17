@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import './Hero.css';
+import HeroImage from '../assets/hero-ai.png';
 
 const Hero = () => {
   const orbRef = useRef(null);
@@ -41,11 +42,11 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="hero-content">
-        <div className="hero-badge">
+        {/* <div className="hero-badge">
           <span className="badge-icon">✨</span>
           <span>Next-Gen AI Solutions</span>
           <div className="badge-shine"></div>
-        </div>
+        </div> */}
 
         <h1 className="hero-title">
           Welcome to <br />
@@ -57,8 +58,8 @@ const Hero = () => {
         </p>
 
         <p className="hero-description">
-          Unlock unprecedented possibilities with our cutting-edge AI products. 
-          From advanced Large Language Models to autonomous AI Agents, we deliver 
+          Unlock unprecedented possibilities with our cutting-edge AI products.
+          From advanced Large Language Models to autonomous AI Agents, we deliver
           enterprise-grade solutions that transform how you work.
         </p>
 
@@ -135,14 +136,8 @@ const Hero = () => {
 
       {/* Hero Visual */}
       <div className="hero-visual">
-        <div className="ai-orb" ref={orbRef}>
-          <div className="orb-core">
-            <div className="core-inner"></div>
-            <div className="core-particles"></div>
-          </div>
-          <div className="orb-ring ring-1"></div>
-          <div className="orb-ring ring-2"></div>
-          <div className="orb-ring ring-3"></div>
+        <div className="hero-image-container" ref={orbRef}>
+          <img src={HeroImage} alt="AI Technology" className="hero-main-image" />
           <div className="orb-glow"></div>
         </div>
 

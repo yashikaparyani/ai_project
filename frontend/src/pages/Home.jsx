@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import './Home.css';
+import FeatureImage from '../assets/image1.jpg';
 
 const Home = () => {
   const observerRef = useRef(null);
@@ -32,7 +34,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <Hero />
-      
+
       {/* Floating Elements Background */}
       <div className="floating-shapes">
         <div className="shape shape-1"></div>
@@ -53,61 +55,88 @@ const Home = () => {
           </h2>
         </div>
         <div className="products-grid">
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">📹</div>
-            <h3>CCTV Surveillance</h3>
-            <p>AI-powered CCTV system with real-time threat detection and automated alerts.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">🌐</div>
-            <h3>Network Management System</h3>
-            <p>AI-driven network monitoring, predictive maintenance, and troubleshooting.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">🤖</div>
-            <h3>AI Agents for Amazon Seller</h3>
-            <p>Automate and optimize Amazon seller operations with smart AI agents.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">🤖</div>
-            <h3>AI Agents for Flipkart Seller</h3>
-            <p>Boost Flipkart seller performance using intelligent AI automation.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">📝</div>
-            <h3>AI Based Assessment System</h3>
-            <p>Automated, intelligent assessment and evaluation platform.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">🚦</div>
-            <h3>AI Based ATCS (Traffic System)</h3>
-            <p>Adaptive traffic control system powered by AI for smart cities.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">🕒</div>
-            <h3>AI Based Attendance Management System</h3>
-            <p>Face recognition and smart attendance tracking using AI.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">📈</div>
-            <h3>AI Reporting Tools</h3>
-            <p>Automated analytics and reporting with actionable insights.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">💬</div>
-            <h3>WhatsApp Agents</h3>
-            <p>Conversational AI agents for WhatsApp business automation.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">🤖</div>
-            <h3>Chat Bot</h3>
-            <p>Custom AI chatbots for customer support and engagement.</p>
-          </div>
-          <div className="product-card glass-effect animate-on-scroll">
-            <div className="product-icon">🧠</div>
-            <h3>LLM</h3>
-            <p>Large Language Models for advanced text understanding and generation.</p>
-          </div>
+          <Link to="/product/cctv-surveillance" className="product-card-link">
+            <div className="product-card glass-effect animate-on-scroll">
+              <div className="product-icon">📹</div>
+              <h3>CCTV Surveillance</h3>
+              <p>AI-powered CCTV system with real-time threat detection and automated alerts.</p>
+            </div>
+          </Link>
+          <Link to="/product/network-management-system" className="product-card-link">
+            <div className="product-card glass-effect animate-on-scroll">
+              <div className="product-icon">🌐</div>
+              <h3>Network Management System</h3>
+              <p>AI-driven network monitoring, predictive maintenance, and troubleshooting.</p>
+            </div>
+          </Link>
+          <Link to="/product/amazon-ai-agents" className="product-card-link">
+            <div className="product-card glass-effect animate-on-scroll">
+              <div className="product-icon">🤖</div>
+              <h3>AI Agents for Amazon Seller</h3>
+              <p>Automate and optimize Amazon seller operations with smart AI agents.</p>
+            </div>
+          </Link>
+          <Link to="/product/flipkart-ai-agents" className="product-card-link">
+            <div className="product-card glass-effect animate-on-scroll">
+              <div className="product-icon">🤖</div>
+              <h3>AI Agents for Flipkart Seller</h3>
+              <p>Boost Flipkart seller performance using intelligent AI automation.</p>
+            </div>
+          </Link>
+
+          {/* Featured Image - 5th Item (Middle Column, Spanning 2 Rows) */}
+          {/* Featured Image - 5th Item (Middle Column, Spanning 2 Rows) */}
+          <Link to="/products" className="product-card-link featured-image-link">
+            <div className="product-card featured-image-card animate-on-scroll">
+              <img src={FeatureImage} alt="AI Solutions" className="featured-product-image" />
+              <div className="featured-overlay">
+                <h3>Comprehensive AI Ecosystem</h3>
+                <p>Integrated solutions for every business need</p>
+              </div>
+            </div>
+          </Link>
+          <Link to="/product/ai-assessment-system" className="product-card-link">
+            <div className="product-card glass-effect animate-on-scroll">
+              <div className="product-icon">📝</div>
+              <h3>AI Based Assessment System</h3>
+              <p>Automated, intelligent assessment and evaluation platform.</p>
+            </div>
+          </Link>
+          <Link to="/product/smart-traffic-control" className="product-card-link">
+            <div className="product-card glass-effect animate-on-scroll">
+              <div className="product-icon">🚦</div>
+              <h3>AI Smart Traffic Control System</h3>
+              <p>Adaptive traffic control system powered by AI for smart cities.</p>
+            </div>
+          </Link>
+          <Link to="/product/attendance-management" className="product-card-link">
+            <div className="product-card glass-effect animate-on-scroll">
+              <div className="product-icon">🕒</div>
+              <h3>AI Based Attendance Management System</h3>
+              <p>Face recognition and smart attendance tracking using AI.</p>
+            </div>
+          </Link>
+          <Link to="/product/ai-reporting-tools" className="product-card-link">
+            <div className="product-card glass-effect animate-on-scroll">
+              <div className="product-icon">📈</div>
+              <h3>AI Tools for Reporting</h3>
+              <p>Automated analytics and reporting with actionable insights.</p>
+            </div>
+          </Link>
+          <Link to="/product/chatbot" className="product-card-link">
+            <div className="product-card glass-effect animate-on-scroll">
+              <div className="product-icon">🤖</div>
+              <h3>Chat Bot</h3>
+              <p>Custom AI chatbots for customer support and engagement.</p>
+            </div>
+          </Link>
+          <Link to="/product/enterprise-llm" className="product-card-link">
+            <div className="product-card glass-effect">
+              <div className="product-icon">🧠</div>
+              <h3>Enterprise LLM & Custom AI Models</h3>
+              <p>Large Language Models for advanced text understanding and generation.</p>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -117,7 +146,7 @@ const Home = () => {
           <div className="gradient-orb orb-1"></div>
           <div className="gradient-orb orb-2"></div>
         </div>
-        
+
         <div className="capabilities-container">
           <div className="section-header animate-on-scroll" id="header-capabilities">
             <div className="section-badge">
@@ -133,101 +162,101 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="capabilities-grid">
-            <div className="capability-card glass-effect animate-on-scroll" id="cap-1">
-              <div className="card-glow"></div>
-              <div className="capability-icon-wrapper">
-                <div className="icon-circle"></div>
-                <div className="capability-icon">🧠</div>
+          <div className="capabilities-grid-modern">
+            <div className="capability-item animate-on-scroll" id="cap-1">
+              <div className="icon-modern-wrapper">
+                <div className="icon-glow-ring"></div>
+                <div className="capability-icon-modern">🧠</div>
               </div>
-              <h3>Large Language Models</h3>
-              <p>Advanced LLMs with billions of parameters for natural language understanding and generation</p>
-              <div className="capability-features">
-                <span className="feature-tag">Multi-language</span>
-                <span className="feature-tag">Context retention</span>
-                <span className="feature-tag">Fine-tuning</span>
+              <h3>Cognitive Language Engines</h3>
+              <p>Beyond text generation. Context-aware models that act as your business's central nervous system.</p>
+              <div className="modern-features">
+                <span>Context Recall</span>
+                <span>•</span>
+                <span>Reasoning</span>
+                <span>•</span>
+                <span>Synthesis</span>
               </div>
-              <div className="card-shine"></div>
             </div>
 
-            <div className="capability-card glass-effect animate-on-scroll" id="cap-2">
-              <div className="card-glow"></div>
-              <div className="capability-icon-wrapper">
-                <div className="icon-circle"></div>
-                <div className="capability-icon">🤖</div>
+            <div className="capability-item animate-on-scroll" id="cap-2">
+              <div className="icon-modern-wrapper">
+                <div className="icon-glow-ring"></div>
+                <div className="capability-icon-modern">🤖</div>
               </div>
-              <h3>AI Agents</h3>
-              <p>Autonomous agents that plan, execute, and adapt to complex multi-step tasks</p>
-              <div className="capability-features">
-                <span className="feature-tag">Task automation</span>
-                <span className="feature-tag">Self-learning</span>
-                <span className="feature-tag">Multi-tool</span>
+              <h3>Autonomous Workforce</h3>
+              <p>Self-managing agents that plan, execute, and learn. True automation that evolves with your needs.</p>
+              <div className="modern-features">
+                <span>Planning</span>
+                <span>•</span>
+                <span>Execution</span>
+                <span>•</span>
+                <span>Self-Correction</span>
               </div>
-              <div className="card-shine"></div>
             </div>
 
-            <div className="capability-card glass-effect animate-on-scroll" id="cap-3">
-              <div className="card-glow"></div>
-              <div className="capability-icon-wrapper">
-                <div className="icon-circle"></div>
-                <div className="capability-icon">👁️</div>
+            <div className="capability-item animate-on-scroll" id="cap-3">
+              <div className="icon-modern-wrapper">
+                <div className="icon-glow-ring"></div>
+                <div className="capability-icon-modern">👁️</div>
               </div>
-              <h3>Computer Vision</h3>
-              <p>State-of-the-art visual recognition and analysis for enterprise applications</p>
-              <div className="capability-features">
-                <span className="feature-tag">Object detection</span>
-                <span className="feature-tag">Classification</span>
-                <span className="feature-tag">Video analysis</span>
+              <h3>Visual Intelligence</h3>
+              <p>Transform video feeds into actionable data. Real-time precision for security, quality control, and analytics.</p>
+              <div className="modern-features">
+                <span>Detection</span>
+                <span>•</span>
+                <span>Tracking</span>
+                <span>•</span>
+                <span>Analysis</span>
               </div>
-              <div className="card-shine"></div>
             </div>
 
-            <div className="capability-card glass-effect animate-on-scroll" id="cap-4">
-              <div className="card-glow"></div>
-              <div className="capability-icon-wrapper">
-                <div className="icon-circle"></div>
-                <div className="capability-icon">💬</div>
+            <div className="capability-item animate-on-scroll" id="cap-4">
+              <div className="icon-modern-wrapper">
+                <div className="icon-glow-ring"></div>
+                <div className="capability-icon-modern">💬</div>
               </div>
-              <h3>NLP Solutions</h3>
-              <p>Advanced natural language processing for text understanding and generation</p>
-              <div className="capability-features">
-                <span className="feature-tag">Sentiment analysis</span>
-                <span className="feature-tag">Classification</span>
-                <span className="feature-tag">NER</span>
+              <h3>Semantic Understanding</h3>
+              <p>Decode intent and sentiment instantly. Turn unstructured text into structured, decision-ready insights.</p>
+              <div className="modern-features">
+                <span>Intent</span>
+                <span>•</span>
+                <span>Sentiment</span>
+                <span>•</span>
+                <span>Extraction</span>
               </div>
-              <div className="card-shine"></div>
             </div>
 
-            <div className="capability-card glass-effect animate-on-scroll" id="cap-5">
-              <div className="card-glow"></div>
-              <div className="capability-icon-wrapper">
-                <div className="icon-circle"></div>
-                <div className="capability-icon">📊</div>
+            <div className="capability-item animate-on-scroll" id="cap-5">
+              <div className="icon-modern-wrapper">
+                <div className="icon-glow-ring"></div>
+                <div className="capability-icon-modern">📊</div>
               </div>
-              <h3>ML Services</h3>
-              <p>Comprehensive machine learning platforms for predictive analytics and modeling</p>
-              <div className="capability-features">
-                <span className="feature-tag">Predictive modeling</span>
-                <span className="feature-tag">AutoML</span>
-                <span className="feature-tag">Real-time</span>
+              <h3>Predictive Horizons</h3>
+              <p>Stop guessing. Use historical data to forecast trends and optimize complex decision-making in real-time.</p>
+              <div className="modern-features">
+                <span>Forecasting</span>
+                <span>•</span>
+                <span>Optimization</span>
+                <span>•</span>
+                <span>Trends</span>
               </div>
-              <div className="card-shine"></div>
             </div>
 
-            <div className="capability-card glass-effect animate-on-scroll" id="cap-6">
-              <div className="card-glow"></div>
-              <div className="capability-icon-wrapper">
-                <div className="icon-circle"></div>
-                <div className="capability-icon">⚡</div>
+            <div className="capability-item animate-on-scroll" id="cap-6">
+              <div className="icon-modern-wrapper">
+                <div className="icon-glow-ring"></div>
+                <div className="capability-icon-modern">⚡</div>
               </div>
-              <h3>Edge AI</h3>
-              <p>Deploy AI models on edge devices for low-latency, real-time processing</p>
-              <div className="capability-features">
-                <span className="feature-tag">On-device</span>
-                <span className="feature-tag">Optimized</span>
-                <span className="feature-tag">Privacy-first</span>
+              <h3>Edge Intelligence</h3>
+              <p>Maximum power, zero latency. Deploy sophisticated AI models directly on devices for privacy and speed.</p>
+              <div className="modern-features">
+                <span>On-Device</span>
+                <span>•</span>
+                <span>Real-Time</span>
+                <span>•</span>
+                <span>Secure</span>
               </div>
-              <div className="card-shine"></div>
             </div>
           </div>
         </div>
@@ -242,16 +271,16 @@ const Home = () => {
             <div className="stat-label">Uptime %</div>
           </div>
           <div className="stat-card animate-on-scroll" id="stat-2">
-            <div className="stat-icon">🚀</div>
-            <div className="stat-number" data-target="50">0</div>
-            <div className="stat-suffix">M+</div>
-            <div className="stat-label">API Calls</div>
+            <div className="stat-icon">🏢</div>
+            <div className="stat-number" data-target="25">0</div>
+            <div className="stat-suffix">+</div>
+            <div className="stat-label">Industries Served</div>
           </div>
           <div className="stat-card animate-on-scroll" id="stat-3">
-            <div className="stat-icon">🌍</div>
-            <div className="stat-number" data-target="150">0</div>
-            <div className="stat-suffix">+</div>
-            <div className="stat-label">Countries</div>
+            <div className="stat-icon">💖</div>
+            <div className="stat-number" data-target="98">0</div>
+            <div className="stat-suffix">%</div>
+            <div className="stat-label">Client Satisfaction</div>
           </div>
           <div className="stat-card animate-on-scroll" id="stat-4">
             <div className="stat-icon">⭐</div>
@@ -277,7 +306,11 @@ const Home = () => {
               Enterprise-grade solutions that deliver real results
             </p>
           </div>
-          
+
+          <div className="why-visual">
+            <img src={FeatureImage} alt="Why Choose AI Bureau" className="why-feature-image" />
+          </div>
+
           <div className="why-grid">
             <div className="why-card glass-effect animate-on-scroll" id="why-1">
               <div className="why-number-wrapper">
@@ -316,6 +349,26 @@ const Home = () => {
               </div>
               <h3>24/7 Expert Support</h3>
               <p>Dedicated AI engineers available round-the-clock for your success</p>
+              <div className="card-hover-effect"></div>
+            </div>
+
+            <div className="why-card glass-effect animate-on-scroll" id="why-5">
+              <div className="why-number-wrapper">
+                <div className="number-glow"></div>
+                <div className="why-number">05</div>
+              </div>
+              <h3>Seamless Integration</h3>
+              <p>Plug-and-play solutions that integrate effortlessly with your existing tech stack</p>
+              <div className="card-hover-effect"></div>
+            </div>
+
+            <div className="why-card glass-effect animate-on-scroll" id="why-6">
+              <div className="why-number-wrapper">
+                <div className="number-glow"></div>
+                <div className="why-number">06</div>
+              </div>
+              <h3>Continuous Innovation</h3>
+              <p>Stay ahead of the curve with regular updates and cutting-edge feature releases</p>
               <div className="card-hover-effect"></div>
             </div>
           </div>

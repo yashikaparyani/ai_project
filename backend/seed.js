@@ -134,22 +134,6 @@ const sampleProducts = [
     pricing: "$599/month"
   },
   {
-    name: "WhatsApp Agents",
-    category: "AI Agent",
-    description: "Intelligent WhatsApp chatbot agents that automate customer support, sales, and engagement on WhatsApp Business platform.",
-    features: [
-      "24/7 automated responses",
-      "Multi-language support",
-      "Order tracking integration",
-      "Customer query resolution",
-      "Analytics & insights"
-    ],
-    icon: "💬",
-    technology: ["NLP", "WhatsApp Business API", "AI Agents", "Cloud Integration"],
-    status: "Active",
-    pricing: "$249/month"
-  },
-  {
     name: "Chatbot",
     category: "AI Agent",
     description: "Customizable AI-powered chatbot solution for websites and applications, providing intelligent conversational experiences for customer support and engagement.",
@@ -186,15 +170,15 @@ const sampleProducts = [
 mongoose.connect(process.env.MONGODB_URI)
   .then(async () => {
     console.log('✅ Connected to MongoDB');
-    
+
     // Clear existing products
     await Product.deleteMany({});
     console.log('🗑️  Cleared existing products');
-    
+
     // Insert sample products
     const products = await Product.insertMany(sampleProducts);
     console.log(`✨ Added ${products.length} sample products`);
-    
+
     console.log('🎉 Database seeding completed!');
     process.exit(0);
   })

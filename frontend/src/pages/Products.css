@@ -45,6 +45,21 @@
   line-height: 1.8;
 }
 
+.products-banner-wrapper {
+  margin: 2rem auto;
+  max-width: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(79, 209, 197, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.products-banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .category-filter {
   display: flex;
   justify-content: center;
@@ -113,6 +128,12 @@
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .product-card {

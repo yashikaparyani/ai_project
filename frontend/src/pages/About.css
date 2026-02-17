@@ -77,19 +77,28 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 400px;
+  height: auto;
+  min-height: 400px;
 }
 
-.visual-orb {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(79, 209, 197, 0.4), rgba(99, 179, 237, 0.2));
-  border-radius: 50%;
-  animation: orbFloat 6s ease-in-out infinite;
-  box-shadow:
-    0 0 80px rgba(79, 209, 197, 0.6),
-    0 0 120px rgba(99, 179, 237, 0.4),
-    inset 0 0 60px rgba(255, 255, 255, 0.2);
+.image-container-glow {
+  position: relative;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 40px rgba(99, 179, 237, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image-container-glow:hover {
+  transform: scale(1.02);
+}
+
+.mission-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes orbFloat {

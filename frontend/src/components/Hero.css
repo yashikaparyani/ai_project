@@ -31,7 +31,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(90deg, rgba(79, 209, 197, 0.03) 1px, transparent 1px),
     linear-gradient(rgba(79, 209, 197, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
@@ -39,12 +39,15 @@
 }
 
 @keyframes networkPulse {
-  0%, 100% { 
-    opacity: 0.3; 
+
+  0%,
+  100% {
+    opacity: 0.3;
     transform: scale(1);
   }
-  50% { 
-    opacity: 0.6; 
+
+  50% {
+    opacity: 0.6;
     transform: scale(1.05);
   }
 }
@@ -53,7 +56,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(2px 2px at 15% 25%, rgba(79, 209, 197, 0.5), transparent),
     radial-gradient(2px 2px at 85% 15%, rgba(99, 179, 237, 0.5), transparent),
     radial-gradient(1px 1px at 45% 65%, rgba(128, 90, 213, 0.5), transparent),
@@ -65,11 +68,14 @@
 }
 
 @keyframes particleFloat {
-  0%, 100% { 
-    background-position: 0% 0%, 100% 0%, 50% 50%, 100% 100%, 0% 100%, 50% 25%; 
+
+  0%,
+  100% {
+    background-position: 0% 0%, 100% 0%, 50% 50%, 100% 100%, 0% 100%, 50% 25%;
   }
-  50% { 
-    background-position: 100% 100%, 0% 100%, 50% 50%, 0% 0%, 100% 0%, 75% 75%; 
+
+  50% {
+    background-position: 100% 100%, 0% 100%, 50% 50%, 0% 0%, 100% 0%, 75% 75%;
   }
 }
 
@@ -77,15 +83,20 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: 
+  background:
     linear-gradient(90deg, transparent 0%, rgba(79, 209, 197, 0.05) 50%, transparent 100%);
   background-size: 100px 100%;
   animation: gridSlide 15s linear infinite;
 }
 
 @keyframes gridSlide {
-  0% { background-position: 0 0; }
-  100% { background-position: 100px 0; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100px 0;
+  }
 }
 
 /* ================================
@@ -134,12 +145,16 @@
 }
 
 @keyframes floatMove {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
+
   33% {
     transform: translate(50px, -80px);
   }
+
   66% {
     transform: translate(-30px, 60px);
   }
@@ -185,14 +200,23 @@
 }
 
 @keyframes shine {
-  0% { left: -100%; }
-  50%, 100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
 }
 
 @keyframes badgeGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(79, 209, 197, 0.3);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(79, 209, 197, 0.6);
   }
@@ -204,13 +228,16 @@
 }
 
 @keyframes sparkle {
-  0%, 100% { 
-    opacity: 1; 
-    transform: scale(1) rotate(0deg); 
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
   }
-  50% { 
-    opacity: 0.6; 
-    transform: scale(1.2) rotate(180deg); 
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2) rotate(180deg);
   }
 }
 
@@ -236,18 +263,24 @@
 }
 
 @keyframes gradientShift {
-  0%, 100% { 
-    background-position: 0% 50%; 
+
+  0%,
+  100% {
+    background-position: 0% 50%;
   }
-  50% { 
-    background-position: 100% 50%; 
+
+  50% {
+    background-position: 100% 50%;
   }
 }
 
 @keyframes textGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     filter: drop-shadow(0 0 20px rgba(79, 209, 197, 0.5));
   }
+
   50% {
     filter: drop-shadow(0 0 40px rgba(79, 209, 197, 0.8));
   }
@@ -282,6 +315,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -497,19 +531,60 @@
    HERO VISUAL
    ================================ */
 
+/* Hero Visual */
 .hero-visual {
   position: relative;
   z-index: 2;
   animation: fadeIn 1.5s ease-out 0.5s backwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(79, 209, 197, 0.2);
+  animation: float 6s ease-in-out infinite;
+  margin-top: -120px;
+  /* Shift up more */
+}
+
+.hero-main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+  transform: rotate(-1.5deg);
+  /* Reduce rotation */
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes fadeIn {
-  from { 
-    opacity: 0; 
+  from {
+    opacity: 0;
     transform: scale(0.8);
   }
-  to { 
-    opacity: 1; 
+
+  to {
+    opacity: 1;
     transform: scale(1);
   }
 }
@@ -531,7 +606,7 @@
   position: relative;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #4fd1c5, #63b3ed, #805ad5);
-  box-shadow: 
+  box-shadow:
     0 0 80px rgba(79, 209, 197, 1),
     0 0 120px rgba(99, 179, 237, 0.8),
     0 0 160px rgba(128, 90, 213, 0.6),
@@ -553,12 +628,15 @@
 }
 
 @keyframes innerPulse {
-  0%, 100% { 
-    transform: translate(-50%, -50%) scale(1); 
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
     opacity: 0.8;
   }
-  50% { 
-    transform: translate(-50%, -50%) scale(1.2); 
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
     opacity: 0.4;
   }
 }
@@ -567,7 +645,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(2px 2px at 20% 30%, white, transparent),
     radial-gradient(2px 2px at 60% 70%, white, transparent),
     radial-gradient(1px 1px at 50% 50%, white, transparent),
@@ -578,22 +656,30 @@
 }
 
 @keyframes particleSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes orbPulse {
-  0%, 100% { 
-    transform: scale(1); 
-    box-shadow: 
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
       0 0 80px rgba(79, 209, 197, 1),
       0 0 120px rgba(99, 179, 237, 0.8),
       0 0 160px rgba(128, 90, 213, 0.6),
       inset 0 0 60px rgba(255, 255, 255, 0.4);
   }
-  50% { 
-    transform: scale(1.08); 
-    box-shadow: 
+
+  50% {
+    transform: scale(1.08);
+    box-shadow:
       0 0 100px rgba(79, 209, 197, 1),
       0 0 150px rgba(99, 179, 237, 0.9),
       0 0 200px rgba(128, 90, 213, 0.7),
@@ -631,8 +717,13 @@
 }
 
 @keyframes ringRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .orb-glow {
@@ -646,8 +737,17 @@
 }
 
 @keyframes glowPulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.2); }
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
 }
 
 /* ================================
@@ -690,16 +790,18 @@
 }
 
 @keyframes streamFlow {
-  0% { 
-    transform: translateY(0); 
-    opacity: 0; 
+  0% {
+    transform: translateY(0);
+    opacity: 0;
   }
-  50% { 
-    opacity: 0.6; 
+
+  50% {
+    opacity: 0.6;
   }
-  100% { 
-    transform: translateY(200px); 
-    opacity: 0; 
+
+  100% {
+    transform: translateY(200px);
+    opacity: 0;
   }
 }
 
@@ -748,10 +850,13 @@
 }
 
 @keyframes iconFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
     opacity: 0.4;
   }
+
   50% {
     transform: translateY(-30px) rotate(180deg);
     opacity: 0.8;
@@ -800,6 +905,7 @@
     top: 8px;
     opacity: 1;
   }
+
   100% {
     top: 28px;
     opacity: 0;
@@ -837,9 +943,20 @@
     height: 150px;
   }
 
-  .ring-1 { width: 240px; height: 240px; }
-  .ring-2 { width: 300px; height: 300px; }
-  .ring-3 { width: 380px; height: 380px; }
+  .ring-1 {
+    width: 240px;
+    height: 240px;
+  }
+
+  .ring-2 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ring-3 {
+    width: 380px;
+    height: 380px;
+  }
 }
 
 @media (max-width: 968px) {
@@ -896,9 +1013,20 @@
     height: 120px;
   }
 
-  .ring-1 { width: 200px; height: 200px; }
-  .ring-2 { width: 260px; height: 260px; }
-  .ring-3 { width: 320px; height: 320px; }
+  .ring-1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .ring-2 {
+    width: 260px;
+    height: 260px;
+  }
+
+  .ring-3 {
+    width: 320px;
+    height: 320px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -941,9 +1069,20 @@
     height: 100px;
   }
 
-  .ring-1 { width: 160px; height: 160px; }
-  .ring-2 { width: 210px; height: 210px; }
-  .ring-3 { width: 260px; height: 260px; }
+  .ring-1 {
+    width: 160px;
+    height: 160px;
+  }
+
+  .ring-2 {
+    width: 210px;
+    height: 210px;
+  }
+
+  .ring-3 {
+    width: 260px;
+    height: 260px;
+  }
 
   .floating-icons {
     display: none;

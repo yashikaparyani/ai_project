@@ -1,0 +1,337 @@
+/* ================================
+   PRODUCT DETAIL PAGE
+   ================================ */
+
+.product-detail-page {
+    background: #0a0a1e;
+    min-height: 100vh;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.product-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header Section */
+.product-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+}
+
+.product-detail-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 20px rgba(79, 209, 197, 0.4));
+    animation: pulseIcon 3s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.product-detail-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff, #a0aec0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.product-tagline {
+    font-size: 1.4rem;
+    color: #4fd1c5;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Main Content Grid */
+.product-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: flex-start;
+}
+
+/* Image Placeholder Area */
+.product-image-area {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(79, 209, 197, 0.3);
+    border-radius: 20px;
+    aspect-ratio: 16/10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.product-image-area:hover {
+    border-color: #4fd1c5;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.placeholder-content {
+    text-align: center;
+    color: #a0aec0;
+}
+
+.placeholder-content span {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.placeholder-content p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Description & Tech Stack */
+.product-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.product-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #cbd5e0;
+}
+
+.tech-stack-section h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech-pill {
+    padding: 0.5rem 1.2rem;
+    background: rgba(79, 209, 197, 0.1);
+    border: 1px solid rgba(79, 209, 197, 0.2);
+    border-radius: 50px;
+    color: #4fd1c5;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Features Section */
+.product-features-section {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.product-features-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: rgba(26, 26, 62, 0.4);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79, 209, 197, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+    color: #4fd1c5;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.feature-card p {
+    color: #a0aec0;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.product-cta {
+    margin-top: 5rem;
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(79, 209, 197, 0.1), rgba(99, 179, 237, 0.1));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.product-cta h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.cta-btn {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #4fd1c5, #63b3ed);
+    color: #0a0a1e;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .product-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .product-header {
+        margin-bottom: 2rem;
+    }
+
+    .product-detail-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* NMS Image Stack Styles */
+.product-image-area.nms-area {
+    aspect-ratio: auto;
+    display: block;
+    background: transparent;
+    border: none;
+    padding: 0;
+    overflow: visible;
+}
+
+.nms-carousel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nms-image-slide {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background 0.3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: rgba(79, 209, 197, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.indicator.active {
+    background: #4fd1c5;
+    transform: scale(1.2);
+}
+
+.product-detail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.product-image-area:hover .product-detail-image {
+    transform: scale(1.02);
+}
+
+.nms-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(100, 255, 218, 0.4);
+    border: 1px solid rgba(100, 255, 218, 0.3);
+}

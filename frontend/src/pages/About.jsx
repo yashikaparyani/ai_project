@@ -1,4 +1,5 @@
 import './About.css';
+import AboutImage from '../assets/image2.png';
 
 const About = () => {
   return (
@@ -24,18 +25,20 @@ const About = () => {
             <div className="mission-content">
               <h2 className="mission-title">Our Mission</h2>
               <p className="mission-text">
-                At Ai Bureau, we're committed to democratizing access to cutting-edge artificial intelligence. 
-                Our mission is to empower businesses and developers with enterprise-grade AI solutions that 
+                At Ai Bureau, we're committed to democratizing access to cutting-edge artificial intelligence.
+                Our mission is to empower businesses and developers with enterprise-grade AI solutions that
                 drive innovation, efficiency, and growth.
               </p>
               <p className="mission-text">
-                We believe that AI should be accessible, reliable, and powerful. That's why we've built a 
-                comprehensive suite of AI products ranging from advanced Large Language Models to autonomous 
+                We believe that AI should be accessible, reliable, and powerful. That's why we've built a
+                comprehensive suite of AI products ranging from advanced Large Language Models to autonomous
                 AI Agents, all designed to solve real-world problems.
               </p>
             </div>
             <div className="mission-visual">
-              <div className="visual-orb"></div>
+              <div className="image-container-glow">
+                <img src={AboutImage} alt="Our Mission" className="mission-image" />
+              </div>
             </div>
           </div>
         </div>
@@ -44,7 +47,7 @@ const About = () => {
       <section className="values-section">
         <div className="values-container">
           <h2 className="section-title">Our Core Values</h2>
-          
+
           <div className="values-grid">
             <div className="value-card">
               <div className="value-icon">🚀</div>
@@ -91,7 +94,7 @@ const About = () => {
             Powered by <span className="gradient-text">AI Experts</span>
           </h2>
           <p className="team-description">
-            Our team consists of world-class AI researchers, engineers, and innovators from leading 
+            Our team consists of world-class AI researchers, engineers, and innovators from leading
             tech companies and research institutions. Together, we're building the future of AI.
           </p>
 

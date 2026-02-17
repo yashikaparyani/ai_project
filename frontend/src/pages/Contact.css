@@ -60,6 +60,25 @@
   font-weight: 700;
 }
 
+.contact-image-wrapper {
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(79, 209, 197, 0.2);
+}
+
+.contact-side-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.contact-image-wrapper:hover .contact-side-image {
+  transform: scale(1.05);
+}
+
 .info-card {
   display: flex;
   gap: 1.5rem;

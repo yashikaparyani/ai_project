@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Contact.css';
+import ContactImage from '../assets/image3.png';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -67,7 +68,11 @@ const Contact = () => {
         <div className="content-grid">
           <div className="contact-info">
             <h2>Why Reach Out?</h2>
-            
+
+            <div className="contact-image-wrapper">
+              <img src={ContactImage} alt="Contact Support" className="contact-side-image" />
+            </div>
+
             <div className="info-card">
               <div className="info-icon">💼</div>
               <div className="info-text">
