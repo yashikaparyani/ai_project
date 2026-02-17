@@ -13,24 +13,42 @@ import attendanceImg from '../assets/attendance.png';
 import chatbotImg from '../assets/chatbot.png';
 import llmImg from '../assets/llm.png';
 
+import amazon1 from '../assets/amazon.jpeg';
+import amazon2 from '../assets/amazon (2).jpeg';
+import flipkart1 from '../assets/flipkart.jpeg';
+import flipkart2 from '../assets/flipkart (2).jpeg';
+
 const ProductDetail = () => {
     const { id } = useParams();
     const product = productsData.find(p => p.id === id);
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    const nmsImages = [nms1, nms2, nms3];
+    // Define image arrays for carousel products
+    const productImages = {
+        'network-management-system': [nms1, nms2, nms3],
+        'amazon-ai-agents': [amazon1, amazon2],
+        'flipkart-ai-agents': [flipkart1, flipkart2]
+    };
+
+    const currentImages = productImages[id] || [];
+    const hasCarousel = currentImages.length > 0;
 
     const nextImage = () => {
-        setCurrentImageIndex((prev) => (prev + 1) % nmsImages.length);
+        if (hasCarousel) {
+            setCurrentImageIndex((prev) => (prev + 1) % currentImages.length);
+        }
     };
 
     const prevImage = () => {
-        setCurrentImageIndex((prev) => (prev - 1 + nmsImages.length) % nmsImages.length);
+        if (hasCarousel) {
+            setCurrentImageIndex((prev) => (prev - 1 + currentImages.length) % currentImages.length);
+        }
     };
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        setCurrentImageIndex(0); // Reset carousel on product change
     }, [id]);
 
     if (!product) {
@@ -44,6 +62,30 @@ const ProductDetail = () => {
 
     // Image Mapping
     const getProductImage = (id) => {
+        if (hasCarousel) {
+            return (
+                <div className="nms-carousel">
+                    <button className="carousel-btn prev-btn" onClick={prevImage}>❮</button>
+                    <img
+                        src={currentImages[currentImageIndex]}
+                        alt={`${product.title} ${currentImageIndex + 1}`}
+                        className="nms-image-slide"
+                    />
+                    <button className="carousel-btn next-btn" onClick={nextImage}>❯</button>
+
+                    <div className="carousel-indicators">
+                        {currentImages.map((_, idx) => (
+                            <span
+                                key={idx}
+                                className={`indicator ${idx === currentImageIndex ? 'active' : ''}`}
+                                onClick={() => setCurrentImageIndex(idx)}
+                            ></span>
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
         switch (id) {
             case 'cctv-surveillance': return <img src={cctvImg} alt={product.title} className="product-detail-image" />;
             case 'ai-assessment-system': return <img src={assessmentImg} alt={product.title} className="product-detail-image" />;
@@ -51,28 +93,6 @@ const ProductDetail = () => {
             case 'attendance-management': return <img src={attendanceImg} alt={product.title} className="product-detail-image" />;
             case 'chatbot': return <img src={chatbotImg} alt={product.title} className="product-detail-image" />;
             case 'enterprise-llm': return <img src={llmImg} alt={product.title} className="product-detail-image" />;
-            case 'network-management-system':
-                return (
-                    <div className="nms-carousel">
-                        <button className="carousel-btn prev-btn" onClick={prevImage}>❮</button>
-                        <img
-                            src={nmsImages[currentImageIndex]}
-                            alt={`NMS Interface ${currentImageIndex + 1}`}
-                            className="nms-image-slide"
-                        />
-                        <button className="carousel-btn next-btn" onClick={nextImage}>❯</button>
-
-                        <div className="carousel-indicators">
-                            {nmsImages.map((_, idx) => (
-                                <span
-                                    key={idx}
-                                    className={`indicator ${idx === currentImageIndex ? 'active' : ''}`}
-                                    onClick={() => setCurrentImageIndex(idx)}
-                                ></span>
-                            ))}
-                        </div>
-                    </div>
-                );
             default:
                 return (
                     <div className="placeholder-content">
@@ -97,7 +117,7 @@ const ProductDetail = () => {
                 {/* Main Content: Image & Description */}
                 <div className="product-content-grid">
                     {/* Left: Image Placeholder */}
-                    <div className={`product-image-area ${product.id === 'network-management-system' ? 'nms-area' : ''}`}>
+                    <div className={`product-image-area ${hasCarousel ? 'nms-area' : ''}`}>
                         {getProductImage(product.id)}
                     </div>
 
